@@ -4,9 +4,25 @@
 }
 
 <!DOCTYPE html>
+<style>
+    canto{
+        margin: 100px;
+    }
+    centraliza-meio{
+        align-items: center;
+    }
 
+</style>
 <html>
 <head>
+    <form id="salvarCliente centraliza-meio">
+        <input type="text" name="Nome" placeholder="Digite o Nome" /><br/>
+        <input type="text" name="Email" placeholder="Digite o Email" /><br/>
+        <input type="text" name="Celular" placeholder="Digite o Celular" /><br/>
+        <input type="number" name="Idade" placeholder="Digite o Idade" />
+        <button type="submit">Salvar</button>
+    </form>
+
     <meta name="viewport" content="width=device-width" />
     <title>ListaAjax</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
@@ -33,13 +49,6 @@
         </table>
     </div>
 
-    <form id="salvarCliente">
-        <input type="text" name="Nome" placeholder="Digite o Nome" />
-        <input type="text" name="Email" placeholder="Digite o Email"/>
-        <input type="text" name="Celular" placeholder="Digite o Celular"/>
-        <input type="number" name="Idade" placeholder="Digite o Idade"/>
-        <button type="submit">Salvar</button>
-    </form>
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
