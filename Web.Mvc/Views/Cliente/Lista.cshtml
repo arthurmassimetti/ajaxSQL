@@ -3,11 +3,23 @@
     Layout = null;
 }
 <style>
-    .canto{
-        margin: 100px;
-        
+    /* Centraliza o formulário no meio da tela */
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
+    /* Adiciona um espaçamento entre cada linha de input */
+    input {
+        margin-bottom: 10px;
+    }
+
+    /* Centraliza o botão "Salvar" na parte inferior do formulário */
+    button {
+        margin: 0 auto;
+    }
 </style>
 
 <!DOCTYPE html>
@@ -51,7 +63,6 @@
                     }
                 </tbody>
             </table><br />
-            <a href="/Cliente/Lista/?ClienteId=4040">Cliente 4040</a>
             <br />
             <br />
             <br />

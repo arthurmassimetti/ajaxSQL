@@ -26,6 +26,23 @@ namespace Web.Mvc.Controllers
             return View();
         }
 
+        public ActionResult EditCliente(int clienteId)
+        {
+            // Lógica para obter os dados do cliente pelo clienteId e exibir o formulário de edição
+            return View();
+        }
+
+        public ActionResult DeleteCliente(int clienteId)
+        {
+            // Lógica para obter os dados do cliente pelo clienteId e exibir a confirmação de exclusão
+            return View();
+        }
+
+        public ActionResult UsuariosCliente(int clienteId)
+        {
+            // Lógica para obter os usuários relacionados a este cliente pelo clienteId e exibi-los
+            return View();
+        }
         [HttpPost]
         public JsonResult JsGetCliente(ClienteModel model)
         {

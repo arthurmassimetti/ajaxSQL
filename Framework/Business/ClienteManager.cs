@@ -17,7 +17,7 @@ namespace Framework.Business
             return GenericDA.Get<List<ClienteModel>>(model, "GetCliente");
         }
 
-        public int SetCliente(ClienteModel model)
+        public JsonResponse SetCliente(ClienteModel model)
         {
             try
             {
@@ -25,20 +25,21 @@ namespace Framework.Business
                 {
                     retornoId = GenericDA.Set<int>(model, "SetCliente");
                     retorno = "Dados salvos com sucesso!";
-                    return retornoId;
+                    return new JsonResponse { Success = true, Message = retorno };
                 }
                 else
                 {
                     retorno = "E-mail já existe!";
-                    return 0;
+                    return new JsonResponse { Success = false, Message = retorno };
                 }
             }
             catch (Exception ex)
             {
                 retorno = ex.Message;
-                return 0;
+                return new JsonResponse { Success = false, Message = retorno };
             }
         }
+
 
         private bool ExisteEmail(ClienteModel model)
         {
@@ -47,6 +48,7 @@ namespace Framework.Business
             if (data.Count > 0)
             {
                 return true;
+
             }
             else
             {
