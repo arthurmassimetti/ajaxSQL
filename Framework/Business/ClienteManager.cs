@@ -17,7 +17,24 @@ namespace Framework.Business
             return GenericDA.Get<List<ClienteModel>>(model, "GetCliente");
         }
 
-        public JsonResponse SetCliente(ClienteModel model)
+ 
+
+        public int SetUsuarioCliente(ClienteModel model)
+        {
+            try
+            {
+                retornoId = GenericDA.Set<int>(model, "SetUsuarioCliente");
+                retorno = "Usuário cadastrado com sucesso!";
+                return retornoId;
+            }
+            catch (Exception ex)
+            {
+                retorno = ex.Message;
+                return 0;
+            }
+        }
+
+        public int SetCliente(ClienteModel model)
         {
             try
             {
@@ -25,35 +42,38 @@ namespace Framework.Business
                 {
                     retornoId = GenericDA.Set<int>(model, "SetCliente");
                     retorno = "Dados salvos com sucesso!";
-                    return new JsonResponse { Success = true, Message = retorno };
+                    return retornoId;
                 }
                 else
                 {
                     retorno = "E-mail já existe!";
-                    return new JsonResponse { Success = false, Message = retorno };
+                    return 0;
                 }
             }
             catch (Exception ex)
             {
                 retorno = ex.Message;
-                return new JsonResponse { Success = false, Message = retorno };
+                return 0;
             }
         }
 
-
         private bool ExisteEmail(ClienteModel model)
         {
-            model.DescricaoFiltro = model.Email;
-            var data = GetCliente(model);
-            if (data.Count > 0)
+            if (model.ClienteId == 0)
             {
-                return true;
-
+                model.DescricaoFiltro = model.Email;
+                var data = GetCliente(model);
+                if (data.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
-            {
                 return false;
-            }
         }
 
         public int DeleteCliente(ClienteModel model)
@@ -62,6 +82,20 @@ namespace Framework.Business
             {
                 retornoId = GenericDA.Set<int>(model, "DeleteCliente");
                 retorno = "Dados excluído com sucesso!";
+                return retornoId;
+            }
+            catch (Exception ex)
+            {
+                retorno = ex.Message;
+                return 0;
+            }
+        }
+        public int EditCliente(ClienteModel model)
+        {
+            try
+            {
+                retornoId = GenericDA.Set<int>(model, "EditCliente");
+                retorno = "Dados editados com sucesso!";
                 return retornoId;
             }
             catch (Exception ex)

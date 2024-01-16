@@ -1,0 +1,42 @@
+<style >
+body {
+    /* Substitua o valor conforme necessário */
+    background-color: gray;
+}
+
+.centro {
+    margin: auto;
+    width: 90%; /* Você pode ajustar a largura conforme necessário */
+    margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+    margin-bottom: 20px; /* Ajuste a margem inferior conforme necessário */
+    border: 1px solid #ddd; /* Borda para visualização, opcional */
+    padding: 10px; /* Espaçamento interno para visualização, opcional */
+    text-align: center; /* Centralizar a tabela */
+    border-radius: 6px;
+}
+
+#example2 thead {
+    background-color: white; /* Cor de fundo para o cabeçalho */
+    width: 200px;
+}
+
+#example2 tbody {
+    background-color: ghostwhite; /* Cor de fundo para as células de dados */
+}
+
+#example2 td {
+    border: 1px solid black;
+    padding: 8px;
+    color: black; /* Cor do texto nas células de dados */
+    text-align: left; /* Alinhamento centralizado nas células de dados */
+}
+
+#example2 th {
+    border: 1px solid black;
+    padding: 8px;
+    color: white; /* Cor do texto nas células de dados */
+    text-align: center; /* Alinhamento centralizado nas células de dados */
+    background-color: black;
+}
+
+</style >

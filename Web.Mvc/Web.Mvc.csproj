@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Js\cliente.js" />
+    <Content Include="Views\Cliente\ListaAjax.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
